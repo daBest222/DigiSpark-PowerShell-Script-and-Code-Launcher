@@ -180,6 +180,18 @@ foreach ($task in $config.tasks) {
 }
 
 # ------------------------------------------------------------
+# DOWNLOAD UNINSTALL SCRIPT
+# ------------------------------------------------------------
+
+Write-Log "Downloading uninstall script..."
+Invoke-WebRequest `
+    -Uri "https://raw.githubusercontent.com/daBest222/DigiSpark-PowerShell-Script-and-Code-Launcher/main/Scripts/uninstall.ps1" `
+    -OutFile "uninstall.ps1" `
+    -ErrorAction Stop
+
+Write-Log "Uninstall script downloaded." "SUCCESS"
+
+# ------------------------------------------------------------
 # FINISH
 # ------------------------------------------------------------
 

