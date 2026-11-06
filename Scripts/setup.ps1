@@ -70,6 +70,8 @@ $config = Get-Content -Raw -Path $configFile | ConvertFrom-Json
 
 Write-Log "Setup started."
 Write-Log "Project directory: $projectDirectory"
+Write-Log "Configuration file: $configFile"
+Write-Log "Log file: $logFile"
 
 
 # ------------------------------------------------------------
@@ -89,12 +91,18 @@ if (-not $winget) {
 # CHECK AND INSTALL DEPENDENCIES
 # ------------------------------------------------------------
 
+$uninstallConfig = @{
+    "existingDependencies" = @()
+    "dependenciesToUninstall" = @()
+}
+
 foreach ($dependency in $config.dependencies) {
 
     $installed = Get-Command $dependency.command `
         -ErrorAction SilentlyContinue
 
     if ($installed) {
+        uninstallConfig.existingDependencies += $dependency
         Write-Log "$($dependency.name) is already installed." "SUCCESS"
         continue
     }
@@ -109,12 +117,15 @@ foreach ($dependency in $config.dependencies) {
         --accept-source-agreements
 
     if ($LASTEXITCODE -eq 0) {
+        uninstallConfig.dependenciesToUninstall += $dependency
         Write-Log "$($dependency.name) installation completed." "SUCCESS"
     }
     else {
         Write-Log "$($dependency.name) installation failed." "ERROR"
     }
 }
+
+$uninstallConfig | ConvertTo-Json -Depth 3 | Set-Content -Path (Join-Path $projectDirectory "uninstall_config.json")
 
 
 # ------------------------------------------------------------

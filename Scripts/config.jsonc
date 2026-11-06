@@ -38,7 +38,7 @@
     // Add the files you want to download
     "files": [
         {
-            "url": "https://raw.githubusercontent.com/0x00-0x00/Exploit/main/main.py",
+            "url": "https://raw.githubusercontent.com/daBest222/ExplDigiSpark-PowerShell-Script-and-Code-Launcher/Scripts/main.py",
             "name": "main.py"
         }
     ],
